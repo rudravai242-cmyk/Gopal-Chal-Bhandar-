@@ -1,0 +1,6 @@
+{
+  "name": "গোপাল চাল ভাণ্ডার - Gopal Chal Bhandar",
+  "description": "Gopal Chal Bhandar - Leading wholesale and retail rice shop in India based in Kalna RMC Market, Purba Bardhaman, West Bengal. Pure Minikit, Gobindobhog, Basmati rice bags, mandi rates and shop map.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

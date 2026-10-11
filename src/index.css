@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+  /* 1GB RAM Phone Optimization: prevent memory thrashing & GPU compositing stalls */
+  text-rendering: optimizeSpeed;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Hardware accelerated layer helper */
+.hw-accel {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Zero-lag image rendering */
+img {
+  image-rendering: auto;
+  content-visibility: auto;
+}
+
+/* Low-RAM / Smooth scroll optimization */
+@media (max-width: 640px) {
+  * {
+    /* Prevent heavy composite lag on low-end Mali/Adreno GPUs */
+    -webkit-backface-visibility: hidden;
+  }
+}

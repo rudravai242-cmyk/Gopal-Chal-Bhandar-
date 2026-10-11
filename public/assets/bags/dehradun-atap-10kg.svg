@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <radialGradient id="ddBg" cx="50%" cy="42%" r="68%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+    <linearGradient id="ddTable" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#24140b" />
+      <stop offset="40%" stop-color="#140b06" />
+      <stop offset="100%" stop-color="#080402" />
+    </linearGradient>
+    <radialGradient id="ddShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.95" />
+      <stop offset="55%" stop-color="#000000" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="ddSack3D" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="12%" stop-color="#1d4ed8" />
+      <stop offset="25%" stop-color="#2563eb" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="75%" stop-color="#2563eb" />
+      <stop offset="88%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <linearGradient id="ddGoldPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="40%" stop-color="#f59e0b" />
+      <stop offset="80%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#ddBg)" />
+  <path d="M 0 610 L 600 610 L 600 800 L 0 800 Z" fill="url(#ddTable)" />
+  <ellipse cx="300" cy="625" rx="195" ry="28" fill="url(#ddShadow)" />
+
+  <g id="dehradunPack">
+    <path d="M 150 90 C 230 82, 370 82, 450 90 C 490 220, 495 440, 470 612 C 400 626, 200 626, 130 612 C 105 440, 110 220, 150 90 Z" fill="url(#ddSack3D)" stroke="#172554" stroke-width="2" />
+    <path d="M 144 90 C 230 82, 370 82, 456 90 L 450 108 C 370 100, 230 100, 150 108 Z" fill="#172554" />
+    <path d="M 148 98 C 230 90, 370 90, 452 98" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="6,4" fill="none" />
+
+    <g transform="translate(300, 150)">
+      <rect x="-135" y="-18" width="270" height="36" rx="8" fill="#ca8a04" stroke="url(#ddGoldPlate)" stroke-width="2" />
+      <text x="0" y="5" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="13" font-weight="900" fill="#ffffff" letter-spacing="2">
+        ★ HIMALAYAN RAW ATAP ★
+      </text>
+    </g>
+
+    <g transform="translate(300, 240)">
+      <path d="M -145 -36 C -80 -52, 80 -52, 145 -36 C 155 12, 145 50, 135 56 C 70 42, -70 42, -135 56 C -145 50, -155 12, -145 -36 Z" fill="#ffffff" stroke="url(#ddGoldPlate)" stroke-width="3" />
+      <text x="0" y="8" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="30" font-weight="900" fill="#1e3a8a" letter-spacing="2">
+        DEHRADUN ATAP
+      </text>
+      <text x="0" y="32" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="13" font-weight="900" fill="#ca8a04" letter-spacing="1">
+        পূজা ও ভোগের খাঁটি আতপ চাল
+      </text>
+    </g>
+
+    <g transform="translate(300, 360)">
+      <ellipse cx="0" cy="0" rx="125" ry="60" fill="#fef3c7" stroke="url(#ddGoldPlate)" stroke-width="2" />
+      <polygon points="0,-35 -25,-5 25,-5" fill="#1e3a8a" stroke="#fde047" stroke-width="1.5" />
+      <rect x="-110" y="12" width="220" height="28" rx="6" fill="#1e3a8a" stroke="#fde047" stroke-width="1.5" />
+      <text x="0" y="31" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="12" font-weight="900" fill="#ffffff" letter-spacing="1">
+        PRISTINE UNBOILED WHITE
+      </text>
+    </g>
+
+    <g transform="translate(300, 455)">
+      <rect x="-120" y="-16" width="240" height="32" rx="6" fill="#fef3c7" stroke="#ca8a04" stroke-width="1.5" />
+      <text x="0" y="-1" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="10.5" font-weight="900" fill="#1e3a8a">
+        ★ পায়েস ও নিরামিষ আহারের সেরা ★
+      </text>
+      <text x="0" y="11" text-anchor="middle" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#78350f">
+        ধোয়ার সাথে সাথে অপূর্ব সুবাস • ধবধবে সাদা
+      </text>
+    </g>
+
+    <g transform="translate(300, 530)">
+      <g transform="translate(-90, 0)">
+        <circle cx="0" cy="0" r="20" fill="#ffffff" stroke="#15803d" stroke-width="1.5" />
+        <text x="0" y="-6" text-anchor="middle" font-size="6" font-weight="bold" fill="#15803d">100% RAW</text>
+        <text x="0" y="3" text-anchor="middle" font-size="7.5" font-weight="900" fill="#1e3a8a">PRASAD</text>
+        <text x="0" y="11" text-anchor="middle" font-size="5.5" font-weight="bold" fill="#15803d">PURITY</text>
+      </g>
+      <g transform="translate(0, 0)">
+        <rect x="-52" y="-20" width="104" height="40" rx="6" fill="#1e3a8a" stroke="#fde047" stroke-width="2" />
+        <text x="0" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="7.5" font-weight="bold" fill="#fde047">NET WEIGHT</text>
+        <text x="0" y="13" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="17" font-weight="900" fill="#ffffff">10 KG / 5 KG</text>
+      </g>
+      <g transform="translate(90, 0)">
+        <circle cx="0" cy="0" r="20" fill="#fde047" stroke="#b45309" stroke-width="1.5" />
+        <text x="0" y="-6" text-anchor="middle" font-size="7" font-weight="bold" fill="#78350f">SWEET</text>
+        <text x="0" y="4" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="8.5" font-weight="900" fill="#1e3a8a">BHOG</text>
+        <text x="0" y="12" text-anchor="middle" font-size="6" font-weight="bold" fill="#78350f">SPECIAL</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(300, 690)">
+    <ellipse cx="0" cy="22" rx="70" ry="16" fill="url(#ddShadow)" />
+    <ellipse cx="0" cy="4" rx="66" ry="18" fill="#ca8a04" stroke="#78350f" stroke-width="1.5" />
+    <ellipse cx="0" cy="-2" rx="60" ry="14" fill="#fffbeb" stroke="#d97706" stroke-width="1" />
+    <g fill="#ffffff" stroke="#e5e7eb" stroke-width="0.5">
+      <ellipse cx="-25" cy="-2" rx="10" ry="2.2" transform="rotate(-10, -25, -2)" />
+      <ellipse cx="0" cy="-4" rx="10.5" ry="2.2" transform="rotate(10, 0, -4)" />
+      <ellipse cx="25" cy="-2" rx="10" ry="2.2" transform="rotate(-15, 25, -2)" />
+    </g>
+  </g>
+</svg>

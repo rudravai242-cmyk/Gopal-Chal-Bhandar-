@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <!-- Background Studio Light -->
+    <radialGradient id="rsStudioLight2" cx="50%" cy="42%" r="68%">
+      <stop offset="0%" stop-color="#2a141e" />
+      <stop offset="50%" stop-color="#140a0f" />
+      <stop offset="100%" stop-color="#080306" />
+    </radialGradient>
+
+    <!-- Woven Polypropylene Texture Pattern -->
+    <pattern id="polyWeaveRS2" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#831843" />
+      <path d="M 0 0 L 3 3 L 6 0 M 0 6 L 3 3 L 6 6" fill="none" stroke="#9d174d" stroke-width="0.75" />
+      <path d="M 0 3 L 3 0 L 6 3 M 0 3 L 3 6 L 6 3" fill="none" stroke="#500724" stroke-width="0.75" />
+    </pattern>
+
+    <!-- 3D Bag Lighting Gradient with Cream Center Panel -->
+    <linearGradient id="rsSack3D2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#500724" />
+      <stop offset="12%" stop-color="#831843" />
+      <stop offset="22%" stop-color="#fef3c7" />
+      <stop offset="50%" stop-color="#fffbeb" />
+      <stop offset="78%" stop-color="#fef3c7" />
+      <stop offset="88%" stop-color="#831843" />
+      <stop offset="100%" stop-color="#500724" />
+    </linearGradient>
+
+    <!-- Specular Highlight Overlay -->
+    <linearGradient id="rsSpecular2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="28%" stop-color="#ffffff" stop-opacity="0.15" />
+      <stop offset="38%" stop-color="#ffffff" stop-opacity="0.4" />
+      <stop offset="46%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Gold Metallic Inks -->
+    <linearGradient id="rsGoldPlate2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="40%" stop-color="#f59e0b" />
+      <stop offset="80%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+
+    <!-- Studio Floor -->
+    <linearGradient id="rsTableWood2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#24140b" />
+      <stop offset="40%" stop-color="#140b06" />
+      <stop offset="100%" stop-color="#080402" />
+    </linearGradient>
+
+    <!-- Contact Shadow -->
+    <radialGradient id="rsFloorShadow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.95" />
+      <stop offset="55%" stop-color="#000000" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Clean Background (Zero artificial headers) -->
+  <rect width="600" height="800" fill="url(#rsStudioLight2)" />
+
+  <!-- Wooden Floor Surface -->
+  <path d="M 0 610 L 600 610 L 600 800 L 0 800 Z" fill="url(#rsTableWood2)" />
+  <line x1="0" y1="610" x2="600" y2="610" stroke="#451a03" stroke-width="1.5" opacity="0.6" />
+
+  <!-- Floor Contact Shadow -->
+  <ellipse cx="300" cy="625" rx="195" ry="28" fill="url(#rsFloorShadow2)" />
+
+  <!-- ==================== 26 KG SARADA RATNA PARBOILED RICE SACK ==================== -->
+  <g id="ratnaSackGroup">
+    <!-- Main Sack Shape -->
+    <path d="M 150 90 C 230 82, 370 82, 450 90 C 490 220, 495 440, 470 612 C 400 626, 200 626, 130 612 C 105 440, 110 220, 150 90 Z" 
+          fill="url(#rsSack3D2)" 
+          stroke="#500724" 
+          stroke-width="2" />
+
+    <!-- PP Weave Overlay on Side Borders -->
+    <path d="M 150 90 C 230 82, 370 82, 450 90 C 490 220, 495 440, 470 612 C 400 626, 200 626, 130 612 C 105 440, 110 220, 150 90 Z" 
+          fill="url(#polyWeaveRS2)" 
+          opacity="0.25" />
+
+    <!-- Specular Highlight -->
+    <path d="M 150 90 C 230 82, 370 82, 450 90 C 490 220, 495 440, 470 612 C 400 626, 200 626, 130 612 C 105 440, 110 220, 150 90 Z" 
+          fill="url(#rsSpecular2)" />
+
+    <!-- TOP BAG STITCHING -->
+    <g id="rsSackTopStitch">
+      <path d="M 144 90 C 230 82, 370 82, 456 90 L 450 108 C 370 100, 230 100, 150 108 Z" fill="#500724" />
+      <path d="M 148 98 C 230 90, 370 90, 452 98" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="6,4" fill="none" />
+      <path d="M 150 103 C 230 95, 370 95, 450 103" stroke="#fef08a" stroke-width="1.5" stroke-dasharray="5,3" fill="none" opacity="0.8" />
+    </g>
+
+    <!-- BAG PRINT: TOP BRAND BADGE -->
+    <g transform="translate(300, 150)">
+      <rect x="-135" y="-18" width="270" height="36" rx="8" fill="#831843" stroke="url(#rsGoldPlate2)" stroke-width="2" />
+      <text x="0" y="5" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="13" font-weight="900" fill="#ffffff" letter-spacing="2">
+        ★ SARADA BRAND PREMIUM ★
+      </text>
+    </g>
+
+    <!-- ICONIC GOLDEN MEDALLION & BRAND NAME -->
+    <g transform="translate(300, 240)">
+      <path d="M -145 -36 C -80 -52, 80 -52, 145 -36 C 155 12, 145 50, 135 56 C 70 42, -70 42, -135 56 C -145 50, -155 12, -145 -36 Z" 
+            fill="#ffffff" 
+            stroke="url(#rsGoldPlate2)" 
+            stroke-width="3" />
+
+      <path d="M -138 -30 C -75 -44, 75 -44, 138 -30 C 146 10, 138 42, 128 48 C 65 36, -65 36, -128 48 C -138 42, -146 10, -138 -30 Z" 
+            fill="none" 
+            stroke="#831843" 
+            stroke-width="1" />
+
+      <text x="0" y="8" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="36" font-weight="900" fill="#831843" letter-spacing="3">
+        RATNA RICE
+      </text>
+
+      <text x="0" y="32" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="13" font-weight="900" fill="#15803d" letter-spacing="1">
+        রত্না স্পেশাল লালচে সেদ্ধ চাল
+      </text>
+    </g>
+
+    <!-- CENTER GRAPHIC: SWAN EMBLEM / ROYAL CREST -->
+    <g transform="translate(300, 360)">
+      <ellipse cx="0" cy="0" rx="125" ry="60" fill="#fef3c7" stroke="url(#rsGoldPlate2)" stroke-width="2" />
+      
+      <!-- Golden Crest Icon -->
+      <circle cx="0" cy="-12" r="22" fill="#831843" stroke="#fde047" stroke-width="2" />
+      <text x="0" y="-5" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="16" font-weight="900" fill="#ffffff">R</text>
+
+      <!-- Bold Banner: PARBOILED RICE -->
+      <rect x="-110" y="12" width="220" height="28" rx="6" fill="#831843" stroke="#fde047" stroke-width="1.5" />
+      <text x="0" y="31" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="12.5" font-weight="900" fill="#ffffff" letter-spacing="1">
+        PREMIUM PARBOILED RICE
+      </text>
+    </g>
+
+    <!-- SPECIFICATIONS -->
+    <g transform="translate(300, 455)">
+      <rect x="-120" y="-16" width="240" height="32" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.5" />
+      <text x="0" y="-1" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="10.5" font-weight="900" fill="#831843">
+        ★ পুষ্টিকর ও পেটভরা সেদ্ধ ভাত ★
+      </text>
+      <text x="0" y="11" text-anchor="middle" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#78350f">
+        দৈনন্দিন খাবার উপযোগী • শতভাগ ভেজালমুক্ত
+      </text>
+    </g>
+
+    <!-- BOTTOM SACK STAMP: 26 KG NET WT -->
+    <g transform="translate(300, 530)">
+      <g transform="translate(-90, 0)">
+        <circle cx="0" cy="0" r="20" fill="#ffffff" stroke="#15803d" stroke-width="1.5" />
+        <text x="0" y="-6" text-anchor="middle" font-size="6.5" font-weight="bold" fill="#15803d">TESTED</text>
+        <text x="0" y="3" text-anchor="middle" font-size="8" font-weight="900" fill="#831843">PURITY</text>
+        <text x="0" y="11" text-anchor="middle" font-size="5.5" font-weight="bold" fill="#15803d">100% CLEAN</text>
+      </g>
+
+      <g transform="translate(0, 0)">
+        <rect x="-52" y="-20" width="104" height="40" rx="6" fill="#831843" stroke="#fde047" stroke-width="2" />
+        <text x="0" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="7.5" font-weight="bold" fill="#fde047">NET WEIGHT</text>
+        <text x="0" y="13" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="17" font-weight="900" fill="#ffffff">26 KG</text>
+      </g>
+
+      <g transform="translate(90, 0)">
+        <circle cx="0" cy="0" r="20" fill="#fde047" stroke="#b45309" stroke-width="1.5" />
+        <text x="0" y="-6" text-anchor="middle" font-size="7" font-weight="bold" fill="#78350f">NATURAL</text>
+        <text x="0" y="4" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="8.5" font-weight="900" fill="#831843">BOILED</text>
+        <text x="0" y="12" text-anchor="middle" font-size="6" font-weight="bold" fill="#78350f">NUTRITIOUS</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== FOREGROUND: GOLDEN PARBOILED RICE GRAINS ==================== -->
+  <g transform="translate(300, 690)">
+    <ellipse cx="0" cy="22" rx="70" ry="16" fill="url(#rsFloorShadow2)" />
+    <ellipse cx="0" cy="4" rx="66" ry="18" fill="#b45309" stroke="#78350f" stroke-width="1.5" />
+    <ellipse cx="0" cy="-2" rx="60" ry="14" fill="#fef3c7" stroke="#d97706" stroke-width="1" />
+    
+    <!-- Bold Golden-Tinged Parboiled Grains -->
+    <g fill="#fef08a" stroke="#d97706" stroke-width="0.5">
+      <ellipse cx="-35" cy="-2" rx="8" ry="3" transform="rotate(-10, -35, -2)" />
+      <ellipse cx="-20" cy="-6" rx="8.5" ry="3.2" transform="rotate(15, -20, -6)" />
+      <ellipse cx="-5" cy="-3" rx="9" ry="3.2" transform="rotate(-5, -5, -3)" />
+      <ellipse cx="12" cy="-5" rx="8.5" ry="3.2" transform="rotate(20, 12, -5)" />
+      <ellipse cx="30" cy="-2" rx="8" ry="3" transform="rotate(-15, 30, -2)" />
+      <ellipse cx="-12" cy="2" rx="8.5" ry="3.1" transform="rotate(10, -12, 2)" />
+      <ellipse cx="12" cy="2" rx="8.5" ry="3.1" transform="rotate(-10, 12, 2)" />
+    </g>
+  </g>
+</svg>

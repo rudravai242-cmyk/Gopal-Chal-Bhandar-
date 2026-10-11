@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <!-- Dark Studio Backdrop -->
+    <radialGradient id="bottleStudioBg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#242b35" />
+      <stop offset="50%" stop-color="#141922" />
+      <stop offset="100%" stop-color="#080b0f" />
+    </radialGradient>
+
+    <!-- Studio Floor Reflection Surface -->
+    <linearGradient id="studioDarkSurface2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1b2029" />
+      <stop offset="40%" stop-color="#10141a" />
+      <stop offset="100%" stop-color="#06080b" />
+    </linearGradient>
+
+    <!-- Bottle Contact Shadow -->
+    <radialGradient id="bottleShadowReal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Glowing Amber-Golden Mustard Oil in Transparent PET Bottle -->
+    <linearGradient id="bottleOilAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b45309" />
+      <stop offset="12%" stop-color="#d97706" />
+      <stop offset="35%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="70%" stop-color="#f59e0b" />
+      <stop offset="88%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+
+    <!-- Glass/Plastic Specular Highlights on Curved Bottle -->
+    <linearGradient id="petGlassGloss" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="18%" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="25%" stop-color="#ffffff" stop-opacity="0.75" />
+      <stop offset="32%" stop-color="#ffffff" stop-opacity="0.2" />
+      <stop offset="75%" stop-color="#ffffff" stop-opacity="0.05" />
+      <stop offset="85%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Bright Red Plastic Cap Gradient -->
+    <linearGradient id="redBottleCap" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#991b1b" />
+      <stop offset="25%" stop-color="#ef4444" />
+      <stop offset="50%" stop-color="#f87171" />
+      <stop offset="75%" stop-color="#dc2626" />
+      <stop offset="100%" stop-color="#7f1d1d" />
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Studio Background (No artificial banner texts) -->
+  <rect width="600" height="800" fill="url(#bottleStudioBg)" />
+
+  <!-- Studio Surface -->
+  <path d="M 0 620 L 600 620 L 600 800 L 0 800 Z" fill="url(#studioDarkSurface2)" />
+  <line x1="0" y1="620" x2="600" y2="620" stroke="#2a3342" stroke-width="1" opacity="0.4" />
+
+  <!-- Base Drop Shadow -->
+  <ellipse cx="300" cy="625" rx="100" ry="20" fill="url(#bottleShadowReal)" />
+
+  <!-- ==================== REALISTIC 200ML PET BOTTLE ==================== -->
+  <g id="saloni200mlBottle">
+    <!-- Bottle Cap & Neck -->
+    <g id="capGroup">
+      <!-- Tamper-evident Seal Ring -->
+      <rect x="274" y="146" width="52" height="10" rx="3" fill="#991b1b" stroke="#7f1d1d" stroke-width="1" />
+      <!-- Threaded Cap with Vertical Ribs -->
+      <rect x="270" y="105" width="60" height="42" rx="5" fill="url(#redBottleCap)" stroke="#7f1d1d" stroke-width="1.5" />
+      <!-- Cap Grip Ribs -->
+      <g stroke="#ffffff" stroke-width="1" opacity="0.4">
+        <line x1="278" y1="108" x2="278" y2="144" />
+        <line x1="284" y1="108" x2="284" y2="144" />
+        <line x1="290" y1="108" x2="290" y2="144" />
+        <line x1="296" y1="108" x2="296" y2="144" />
+        <line x1="302" y1="108" x2="302" y2="144" />
+        <line x1="308" y1="108" x2="308" y2="144" />
+        <line x1="314" y1="108" x2="314" y2="144" />
+        <line x1="320" y1="108" x2="320" y2="144" />
+      </g>
+    </g>
+
+    <!-- Bottle Neck -->
+    <path d="M 276 156 L 270 205 L 330 205 L 324 156 Z" fill="url(#bottleOilAmber)" stroke="#92400e" stroke-width="1" />
+
+    <!-- Bottle Sloping Shoulder -->
+    <path d="M 270 205 C 265 240, 225 270, 215 310 L 385 310 C 375 270, 335 240, 330 205 Z" fill="url(#bottleOilAmber)" stroke="#92400e" stroke-width="1" />
+
+    <!-- Main Cylindrical Body with Ribbed Strengthening Rings -->
+    <path d="M 215 310 L 215 605 C 215 618, 385 618, 385 605 L 385 310 Z" fill="url(#bottleOilAmber)" stroke="#92400e" stroke-width="1" />
+
+    <!-- Ribbed Grooves for Structural Strength on PET Bottle -->
+    <path d="M 216 350 C 260 356, 340 356, 384 350" stroke="#78350f" stroke-width="2" fill="none" opacity="0.6" />
+    <path d="M 216 353 C 260 359, 340 359, 384 353" stroke="#fde047" stroke-width="1.5" fill="none" opacity="0.7" />
+
+    <path d="M 216 540 C 260 546, 340 546, 384 540" stroke="#78350f" stroke-width="2" fill="none" opacity="0.6" />
+    <path d="M 216 543 C 260 549, 340 549, 384 543" stroke="#fde047" stroke-width="1.5" fill="none" opacity="0.7" />
+
+    <!-- Plastic Specular Gloss Over Entire Bottle Contour -->
+    <g>
+      <path d="M 276 156 L 270 205 C 265 240, 225 270, 215 310 L 215 605 C 215 618, 385 618, 385 605 L 385 310 C 375 270, 335 240, 330 205 L 324 156 Z" 
+            fill="url(#petGlassGloss)" />
+    </g>
+
+    <!-- AUTHENTIC SALONI BOTTLE WRAP LABEL (Center of Bottle) -->
+    <g id="bottleLabel" transform="translate(300, 445)">
+      <!-- Yellow Label Background Wrap -->
+      <rect x="-84" y="-72" width="168" height="144" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="1.5" />
+
+      <!-- Top 100% Pure Kacchi Ghani Header -->
+      <rect x="-80" y="-68" width="160" height="16" fill="#15803d" rx="2" />
+      <text x="0" y="-56" text-anchor="middle" font-family="Arial, sans-serif" font-size="7.5" font-weight="900" fill="#ffffff">
+        100% PURE KACCHI GHANI
+      </text>
+
+      <!-- SALONI Iconic Red Brand Box -->
+      <rect x="-70" y="-46" width="140" height="34" rx="4" fill="#dc2626" stroke="#fde047" stroke-width="1.5" />
+      <text x="-4" y="-22" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="24" font-weight="900" fill="#ffffff" letter-spacing="2">
+        SALONI
+      </text>
+      <circle cx="56" cy="-35" r="4.5" fill="#ffffff" />
+      <text x="56" y="-33" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#dc2626">®</text>
+
+      <!-- Traditional Mascot Lady Icon -->
+      <circle cx="0" cy="5" r="16" fill="#ffffff" stroke="#eab308" stroke-width="1.5" />
+      <ellipse cx="0" cy="5" rx="8" ry="9" fill="#fed7aa" />
+      <path d="M -9 8 C -11 -3, 11 -3, 9 8 Z" fill="#dc2626" />
+      <circle cx="0" cy="4" r="1.5" fill="#dc2626" />
+      <circle cx="-3" cy="6" r="1" fill="#1c1917" />
+      <circle cx="3" cy="6" r="1" fill="#1c1917" />
+
+      <!-- Net Vol: 200 ml + Agmark Grade 1 -->
+      <g transform="translate(0, 36)">
+        <rect x="-76" y="-10" width="48" height="18" rx="3" fill="#15803d" />
+        <text x="-52" y="2" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="7" font-weight="900" fill="#ffffff">
+          200 ml
+        </text>
+
+        <!-- Agmark Seal -->
+        <rect x="-20" y="-10" width="50" height="18" rx="3" fill="#ffffff" stroke="#15803d" stroke-width="1" />
+        <text x="5" y="2" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="900" fill="#991b1b">
+          AGMARK-1
+        </text>
+
+        <!-- 100% Veg Dot -->
+        <rect x="36" y="-8" width="14" height="14" fill="#ffffff" stroke="#15803d" stroke-width="1.5" rx="2" />
+        <circle cx="43" cy="-1" r="3.5" fill="#15803d" />
+      </g>
+
+      <!-- Bottom Purity Text -->
+      <text x="0" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#713f12">
+        কাচ্চি ঘানি খাঁটি সরিষার তেল
+      </text>
+    </g>
+
+    <!-- Bottom Bottle Base Curve -->
+    <path d="M 215 605 C 255 616, 345 616, 385 605 C 385 618, 215 618, 215 605 Z" fill="#78350f" />
+  </g>
+
+  <!-- Foreground Side Accents: Authentic Mustard Grains -->
+  <g transform="translate(300, 680)">
+    <g transform="translate(-90, 0)">
+      <ellipse cx="0" cy="12" rx="30" ry="8" fill="url(#bottleShadowReal)" />
+      <ellipse cx="0" cy="0" rx="26" ry="9" fill="#92400e" stroke="#78350f" stroke-width="1" />
+      <ellipse cx="0" cy="-2" rx="24" ry="7" fill="#f59e0b" />
+      <circle cx="-6" cy="-4" r="1.5" fill="#ffffff" opacity="0.6" />
+    </g>
+    <g transform="translate(90, 0)">
+      <ellipse cx="0" cy="12" rx="30" ry="8" fill="url(#bottleShadowReal)" />
+      <ellipse cx="0" cy="0" rx="26" ry="8" fill="#451a03" />
+      <circle cx="-8" cy="-2" r="2" fill="#facc15" />
+      <circle cx="0" cy="-3" r="2.2" fill="#78350f" />
+      <circle cx="8" cy="-1" r="1.8" fill="#d97706" />
+    </g>
+  </g>
+</svg>
