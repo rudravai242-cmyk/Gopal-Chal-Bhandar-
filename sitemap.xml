@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- 1. Home Section: গোপাল চাল ভাণ্ডার - পাইকারি ও খুচরো চাল স্টোর -->
+  <url>
+    <loc>https://gopal-chal-bhandar.pntr.dev/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 2. Products Section: খাঁটি মিনিকেট, বাসমতী, গোবিন্দভোগ, দুধেশ্বর ও অন্যান্য চাল -->
+  <url>
+    <loc>https://gopal-chal-bhandar.pntr.dev/#products</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gopal-chal-bhandar.pntr.dev/products</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 3. Rates Section: আজকের তাজা বর্ধমান ও কালনা মণ্ডি পাইকারি ও খুচরো বাজার দর -->
+  <url>
+    <loc>https://gopal-chal-bhandar.pntr.dev/#rates</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gopal-chal-bhandar.pntr.dev/rates</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 4. Store Section: কালনা আরএমসি মার্কেট স্টোর, গুগল ম্যাপস লোকেশন ও ডিরেক্ট কল -->
+  <url>
+    <loc>https://gopal-chal-bhandar.pntr.dev/#store</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gopal-chal-bhandar.pntr.dev/store</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

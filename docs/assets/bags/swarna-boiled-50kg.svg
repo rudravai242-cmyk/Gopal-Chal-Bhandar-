@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <radialGradient id="swarnaBg" cx="50%" cy="42%" r="68%">
+      <stop offset="0%" stop-color="#2c1e14" />
+      <stop offset="50%" stop-color="#140d08" />
+      <stop offset="100%" stop-color="#080503" />
+    </radialGradient>
+    <linearGradient id="swarnaTable" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#24140b" />
+      <stop offset="40%" stop-color="#140b06" />
+      <stop offset="100%" stop-color="#080402" />
+    </linearGradient>
+    <radialGradient id="swarnaShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.95" />
+      <stop offset="55%" stop-color="#000000" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="swarnaSack3D" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#78350f" />
+      <stop offset="12%" stop-color="#b45309" />
+      <stop offset="25%" stop-color="#d97706" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="75%" stop-color="#d97706" />
+      <stop offset="88%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+    <linearGradient id="swarnaGoldPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="40%" stop-color="#f59e0b" />
+      <stop offset="80%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#swarnaBg)" />
+  <path d="M 0 610 L 600 610 L 600 800 L 0 800 Z" fill="url(#swarnaTable)" />
+  <ellipse cx="300" cy="625" rx="195" ry="28" fill="url(#swarnaShadow)" />
+
+  <g id="swarnaPack">
+    <path d="M 150 90 C 230 82, 370 82, 450 90 C 490 220, 495 440, 470 612 C 400 626, 200 626, 130 612 C 105 440, 110 220, 150 90 Z" fill="url(#swarnaSack3D)" stroke="#451a03" stroke-width="2" />
+    <path d="M 144 90 C 230 82, 370 82, 456 90 L 450 108 C 370 100, 230 100, 150 108 Z" fill="#451a03" />
+    <path d="M 148 98 C 230 90, 370 90, 452 98" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="6,4" fill="none" />
+
+    <g transform="translate(300, 150)">
+      <rect x="-135" y="-18" width="270" height="36" rx="8" fill="#15803d" stroke="url(#swarnaGoldPlate)" stroke-width="2" />
+      <text x="0" y="5" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="13" font-weight="900" fill="#ffffff" letter-spacing="2">
+        ★ BARDHAMAN GOLDEN RICE ★
+      </text>
+    </g>
+
+    <g transform="translate(300, 240)">
+      <path d="M -145 -36 C -80 -52, 80 -52, 145 -36 C 155 12, 145 50, 135 56 C 70 42, -70 42, -135 56 C -145 50, -155 12, -145 -36 Z" fill="#ffffff" stroke="url(#swarnaGoldPlate)" stroke-width="3" />
+      <text x="0" y="8" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="34" font-weight="900" fill="#78350f" letter-spacing="2">
+        SWARNA RICE
+      </text>
+      <text x="0" y="32" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="13" font-weight="900" fill="#15803d" letter-spacing="1">
+        স্বর্ণ মোটা পুষ্টিকর সেদ্ধ চাল
+      </text>
+    </g>
+
+    <g transform="translate(300, 360)">
+      <ellipse cx="0" cy="0" rx="125" ry="60" fill="#fef3c7" stroke="url(#swarnaGoldPlate)" stroke-width="2" />
+      <circle cx="0" cy="-12" r="20" fill="#d97706" stroke="#fde047" stroke-width="2" />
+      <text x="0" y="-5" text-anchor="middle" font-size="12" font-weight="900" fill="#ffffff">GOLD</text>
+      <rect x="-110" y="12" width="220" height="28" rx="6" fill="#78350f" stroke="#fde047" stroke-width="1.5" />
+      <text x="0" y="31" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="12" font-weight="900" fill="#ffffff" letter-spacing="1">
+        HIGH ENERGY • STAPLE
+      </text>
+    </g>
+
+    <g transform="translate(300, 455)">
+      <rect x="-120" y="-16" width="240" height="32" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.5" />
+      <text x="0" y="-1" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="10.5" font-weight="900" fill="#78350f">
+        ★ পুষ্টিকর ও দীর্ঘক্ষণ পেটভরা ★
+      </text>
+      <text x="0" y="11" text-anchor="middle" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#451a03">
+        মেস, হোটেল ও দৈনন্দিন শক্তির চাল
+      </text>
+    </g>
+
+    <g transform="translate(300, 530)">
+      <g transform="translate(-90, 0)">
+        <circle cx="0" cy="0" r="20" fill="#ffffff" stroke="#15803d" stroke-width="1.5" />
+        <text x="0" y="-6" text-anchor="middle" font-size="6.5" font-weight="bold" fill="#15803d">TESTED</text>
+        <text x="0" y="3" text-anchor="middle" font-size="8" font-weight="900" fill="#78350f">NUTRITION</text>
+        <text x="0" y="11" text-anchor="middle" font-size="5.5" font-weight="bold" fill="#15803d">100% PURE</text>
+      </g>
+      <g transform="translate(0, 0)">
+        <rect x="-52" y="-20" width="104" height="40" rx="6" fill="#78350f" stroke="#fde047" stroke-width="2" />
+        <text x="0" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="7.5" font-weight="bold" fill="#fde047">NET WEIGHT</text>
+        <text x="0" y="13" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="17" font-weight="900" fill="#ffffff">50 KG / 26 KG</text>
+      </g>
+      <g transform="translate(90, 0)">
+        <circle cx="0" cy="0" r="20" fill="#fde047" stroke="#b45309" stroke-width="1.5" />
+        <text x="0" y="-6" text-anchor="middle" font-size="7" font-weight="bold" fill="#78350f">HEAVY</text>
+        <text x="0" y="4" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="8.5" font-weight="900" fill="#78350f">DIET</text>
+        <text x="0" y="12" text-anchor="middle" font-size="6" font-weight="bold" fill="#78350f">STRENGTH</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(300, 690)">
+    <ellipse cx="0" cy="22" rx="70" ry="16" fill="url(#swarnaShadow)" />
+    <ellipse cx="0" cy="4" rx="66" ry="18" fill="#b45309" stroke="#78350f" stroke-width="1.5" />
+    <ellipse cx="0" cy="-2" rx="60" ry="14" fill="#fffbeb" stroke="#d97706" stroke-width="1" />
+    <g fill="#fde047" stroke="#d97706" stroke-width="0.5">
+      <ellipse cx="-25" cy="-2" rx="7" ry="3.5" transform="rotate(-10, -25, -2)" />
+      <ellipse cx="0" cy="-4" rx="7.5" ry="3.8" transform="rotate(10, 0, -4)" />
+      <ellipse cx="25" cy="-2" rx="7" ry="3.6" transform="rotate(-15, 25, -2)" />
+    </g>
+  </g>
+</svg>

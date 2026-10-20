@@ -19,16 +19,28 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<AppLanguage>(() => {
-    const saved = localStorage.getItem('gopal_app_lang');
-    if (saved === 'en' || saved === 'hi' || saved === 'bn') {
-      return saved as AppLanguage;
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        const saved = window.localStorage.getItem('gopal_app_lang');
+        if (saved === 'en' || saved === 'hi' || saved === 'bn') {
+          return saved as AppLanguage;
+        }
+      }
+    } catch (e) {
+      console.warn('LocalStorage not accessible:', e);
     }
     return 'bn';
   });
 
   const setLanguage = (newLang: AppLanguage) => {
     setLanguageState(newLang);
-    localStorage.setItem('gopal_app_lang', newLang);
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        window.localStorage.setItem('gopal_app_lang', newLang);
+      }
+    } catch (e) {
+      console.warn('Failed to save language to localStorage:', e);
+    }
   };
 
   const t = TRANSLATIONS[language];

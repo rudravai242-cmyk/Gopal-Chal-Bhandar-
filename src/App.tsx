@@ -13,13 +13,57 @@ import { useLanguage } from './context/LanguageContext';
 
 export default function App() {
   const { language } = useLanguage();
-  const [activeTab, setActiveTab] = useState<NavTabId>('home');
+  // Read initial tab from URL hash or path
+  const getTabFromUrl = (): NavTabId => {
+    try {
+      if (typeof window !== 'undefined') {
+        const hash = window.location.hash.replace('#', '').toLowerCase();
+        if (hash === 'products' || hash === 'rates' || hash === 'store') {
+          return hash as NavTabId;
+        }
+        const path = window.location.pathname.toLowerCase();
+        if (path.includes('products')) return 'products';
+        if (path.includes('rates')) return 'rates';
+        if (path.includes('store')) return 'store';
+      }
+    } catch (e) {
+      console.warn('URL parsing error:', e);
+    }
+    return 'home';
+  };
+
+  const [activeTab, setActiveTab] = useState<NavTabId>(getTabFromUrl);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [isCookingGuideOpen, setIsCookingGuideOpen] = useState(false);
   const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
 
+  // Sync tab state with browser navigation (back/forward and hash changes)
+  React.useEffect(() => {
+    const handleLocationChange = () => {
+      const tab = getTabFromUrl();
+      setActiveTab(tab);
+    };
+
+    window.addEventListener('hashchange', handleLocationChange);
+    window.addEventListener('popstate', handleLocationChange);
+    return () => {
+      window.removeEventListener('hashchange', handleLocationChange);
+      window.removeEventListener('popstate', handleLocationChange);
+    };
+  }, []);
+
   const handleSelectTab = (tab: NavTabId) => {
     setActiveTab(tab);
+    try {
+      if (typeof window !== 'undefined' && window.history) {
+        const newHash = tab === 'home' ? '' : `#${tab}`;
+        if (window.location.hash !== newHash) {
+          window.history.replaceState(null, '', newHash || window.location.pathname);
+        }
+      }
+    } catch {
+      // ignore
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

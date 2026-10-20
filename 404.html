@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>গোপাল চাল ভাণ্ডার - Gopal Chal Bhandar</title>
+    <script>
+      // Single Page Apps for GitHub Pages / Custom Domain redirects
+      // Store current path & query in sessionStorage and redirect to root index.html
+      var path = window.location.pathname;
+      var query = window.location.search;
+      var hash = window.location.hash;
+      
+      // Determine base URL
+      var segments = path.split('/').filter(Boolean);
+      var redirectHash = '';
+      if (segments.length > 0) {
+        var last = segments[segments.length - 1].toLowerCase();
+        if (last === 'products' || last === 'rates' || last === 'store') {
+          redirectHash = '#' + last;
+        }
+      }
+      
+      // Redirect to root with hash preserved
+      window.location.replace('/' + (redirectHash || hash));
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/">Gopal Chal Bhandar</a>...</p>
+  </body>
+</html>

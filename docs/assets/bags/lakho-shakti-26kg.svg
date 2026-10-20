@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <!-- Background Studio Light -->
+    <radialGradient id="lsStudioLight2" cx="50%" cy="42%" r="68%">
+      <stop offset="0%" stop-color="#2a1f18" />
+      <stop offset="50%" stop-color="#18120e" />
+      <stop offset="100%" stop-color="#080605" />
+    </radialGradient>
+
+    <!-- Woven Polypropylene Texture Pattern -->
+    <pattern id="polyWeaveLS2" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#1e3a8a" />
+      <path d="M 0 0 L 3 3 L 6 0 M 0 6 L 3 3 L 6 6" fill="none" stroke="#2563eb" stroke-width="0.75" />
+      <path d="M 0 3 L 3 0 L 6 3 M 0 3 L 3 6 L 6 3" fill="none" stroke="#172554" stroke-width="0.75" />
+    </pattern>
+
+    <!-- 3D Bag Lighting Gradient (Blue & Gold Royal Theme) -->
+    <linearGradient id="lsSack3D2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="10%" stop-color="#1e3a8a" />
+      <stop offset="22%" stop-color="#2563eb" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="78%" stop-color="#2563eb" />
+      <stop offset="90%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <!-- Specular Highlight Overlay -->
+    <linearGradient id="lsSpecular2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="28%" stop-color="#ffffff" stop-opacity="0.15" />
+      <stop offset="38%" stop-color="#ffffff" stop-opacity="0.4" />
+      <stop offset="46%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Gold Metallic Gradients -->
+    <linearGradient id="lsGoldPlate2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="40%" stop-color="#f59e0b" />
+      <stop offset="80%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+
+    <!-- Studio Floor -->
+    <linearGradient id="lsTableWood2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#24140b" />
+      <stop offset="40%" stop-color="#140b06" />
+      <stop offset="100%" stop-color="#080402" />
+    </linearGradient>
+
+    <!-- Contact Shadow -->
+    <radialGradient id="lsFloorShadow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.95" />
+      <stop offset="55%" stop-color="#000000" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Clean Background (Zero artificial headers) -->
+  <rect width="600" height="800" fill="url(#lsStudioLight2)" />
+
+  <!-- Wooden Floor Surface -->
+  <path d="M 0 610 L 600 610 L 600 800 L 0 800 Z" fill="url(#lsTableWood2)" />
+  <line x1="0" y1="610" x2="600" y2="610" stroke="#451a03" stroke-width="1.5" opacity="0.6" />
+
+  <!-- Floor Contact Shadow -->
+  <ellipse cx="300" cy="625" rx="195" ry="28" fill="url(#lsFloorShadow2)" />
+
+  <!-- ==================== 26 KG LAKHO SHAKTI JEERA RICE SACK ==================== -->
+  <g id="lakhoShaktiSackGroup">
+    <!-- Main Sack Shape -->
+    <path d="M 150 90 C 230 82, 370 82, 450 90 C 490 220, 495 440, 470 612 C 400 626, 200 626, 130 612 C 105 440, 110 220, 150 90 Z" 
+          fill="url(#lsSack3D2)" 
+          stroke="#0f172a" 
+          stroke-width="2" />
+
+    <!-- PP Weave Layer -->
+    <path d="M 150 90 C 230 82, 370 82, 450 90 C 490 220, 495 440, 470 612 C 400 626, 200 626, 130 612 C 105 440, 110 220, 150 90 Z" 
+          fill="url(#polyWeaveLS2)" 
+          opacity="0.25" />
+
+    <!-- Specular Highlight -->
+    <path d="M 150 90 C 230 82, 370 82, 450 90 C 490 220, 495 440, 470 612 C 400 626, 200 626, 130 612 C 105 440, 110 220, 150 90 Z" 
+          fill="url(#lsSpecular2)" />
+
+    <!-- TOP BAG STITCHING -->
+    <g id="lsSackTopStitch">
+      <path d="M 144 90 C 230 82, 370 82, 456 90 L 450 108 C 370 100, 230 100, 150 108 Z" fill="#0f172a" />
+      <path d="M 148 98 C 230 90, 370 90, 452 98" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="6,4" fill="none" />
+      <path d="M 150 103 C 230 95, 370 95, 450 103" stroke="#fef08a" stroke-width="1.5" stroke-dasharray="5,3" fill="none" opacity="0.8" />
+    </g>
+
+    <!-- BAG PRINT: TOP BRAND BADGE -->
+    <g transform="translate(300, 150)">
+      <rect x="-135" y="-18" width="270" height="36" rx="8" fill="#ca8a04" stroke="url(#lsGoldPlate2)" stroke-width="2" />
+      <text x="0" y="5" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="13" font-weight="900" fill="#ffffff" letter-spacing="2">
+        ★ LAKHO SHAKTI PREMIUM ★
+      </text>
+    </g>
+
+    <!-- ICONIC GOLDEN MEDALLION & BRAND NAME -->
+    <g transform="translate(300, 240)">
+      <path d="M -145 -36 C -80 -52, 80 -52, 145 -36 C 155 12, 145 50, 135 56 C 70 42, -70 42, -135 56 C -145 50, -155 12, -145 -36 Z" 
+            fill="#ffffff" 
+            stroke="url(#lsGoldPlate2)" 
+            stroke-width="3" />
+
+      <path d="M -138 -30 C -75 -44, 75 -44, 138 -30 C 146 10, 138 42, 128 48 C 65 36, -65 36, -128 48 C -138 42, -146 10, -138 -30 Z" 
+            fill="none" 
+            stroke="#1e3a8a" 
+            stroke-width="1" />
+
+      <text x="0" y="8" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="34" font-weight="900" fill="#1e3a8a" letter-spacing="3">
+        JEERA SHAKTI
+      </text>
+
+      <text x="0" y="32" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="13" font-weight="900" fill="#b45309" letter-spacing="1">
+        লাখো শক্তি সরু জিরে কাটি চাল
+      </text>
+    </g>
+
+    <!-- CENTER GRAPHIC: JEERA RICE GRAIN ICONOGRAPHY -->
+    <g transform="translate(300, 360)">
+      <ellipse cx="0" cy="0" rx="125" ry="60" fill="#fef3c7" stroke="url(#lsGoldPlate2)" stroke-width="2" />
+      
+      <!-- Crown Icon -->
+      <path d="M -25 0 L -15 -18 L 0 -8 L 15 -18 L 25 0 Z" fill="#f59e0b" stroke="#78350f" stroke-width="1.5" />
+
+      <!-- Bold Banner: SUPER SLENDER GRAIN -->
+      <rect x="-110" y="12" width="220" height="28" rx="6" fill="#1e3a8a" stroke="#fde047" stroke-width="1.5" />
+      <text x="0" y="31" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="12" font-weight="900" fill="#ffffff" letter-spacing="1">
+        ULTRA SLENDER JEERA GRAIN
+      </text>
+    </g>
+
+    <!-- SPECIFICATIONS -->
+    <g transform="translate(300, 455)">
+      <rect x="-120" y="-16" width="240" height="32" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.5" />
+      <text x="0" y="-1" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="10.5" font-weight="900" fill="#1e3a8a">
+        ★ অসম্ভব সরু ও সুস্বাদু ভাত ★
+      </text>
+      <text x="0" y="11" text-anchor="middle" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#78350f">
+        অনুষ্ঠান ও ডিনারের জন্য সেরা • ১০০% সার্টেক্স
+      </text>
+    </g>
+
+    <!-- BOTTOM SACK STAMP: 26 KG NET WT -->
+    <g transform="translate(300, 530)">
+      <g transform="translate(-90, 0)">
+        <circle cx="0" cy="0" r="20" fill="#ffffff" stroke="#15803d" stroke-width="1.5" />
+        <text x="0" y="-6" text-anchor="middle" font-size="6.5" font-weight="bold" fill="#15803d">JEERA</text>
+        <text x="0" y="3" text-anchor="middle" font-size="8" font-weight="900" fill="#1e3a8a">SPECIAL</text>
+        <text x="0" y="11" text-anchor="middle" font-size="5.5" font-weight="bold" fill="#15803d">100% SORTED</text>
+      </g>
+
+      <g transform="translate(0, 0)">
+        <rect x="-52" y="-20" width="104" height="40" rx="6" fill="#1e3a8a" stroke="#fde047" stroke-width="2" />
+        <text x="0" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="7.5" font-weight="bold" fill="#fde047">NET WEIGHT</text>
+        <text x="0" y="13" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="17" font-weight="900" fill="#ffffff">26 KG</text>
+      </g>
+
+      <g transform="translate(90, 0)">
+        <circle cx="0" cy="0" r="20" fill="#fde047" stroke="#b45309" stroke-width="1.5" />
+        <text x="0" y="-6" text-anchor="middle" font-size="7" font-weight="bold" fill="#78350f">SUPER</text>
+        <text x="0" y="4" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="8.5" font-weight="900" fill="#1e3a8a">FINE</text>
+        <text x="0" y="12" text-anchor="middle" font-size="6" font-weight="bold" fill="#78350f">LONG GRAIN</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== FOREGROUND: JEERAKATI SLENDER GRAINS ==================== -->
+  <g transform="translate(300, 690)">
+    <ellipse cx="0" cy="22" rx="70" ry="16" fill="url(#lsFloorShadow2)" />
+    <ellipse cx="0" cy="4" rx="66" ry="18" fill="#b45309" stroke="#78350f" stroke-width="1.5" />
+    <ellipse cx="0" cy="-2" rx="60" ry="14" fill="#fffbeb" stroke="#d97706" stroke-width="1" />
+    
+    <!-- Ultra Slender Jeera Needle-like Grains -->
+    <g fill="#ffffff" stroke="#e5e7eb" stroke-width="0.5">
+      <ellipse cx="-35" cy="-2" rx="10" ry="1.8" transform="rotate(-12, -35, -2)" />
+      <ellipse cx="-20" cy="-6" rx="11" ry="1.9" transform="rotate(15, -20, -6)" />
+      <ellipse cx="-5" cy="-3" rx="12" ry="2.0" transform="rotate(-5, -5, -3)" />
+      <ellipse cx="12" cy="-5" rx="11" ry="1.9" transform="rotate(18, 12, -5)" />
+      <ellipse cx="30" cy="-2" rx="10" ry="1.8" transform="rotate(-15, 30, -2)" />
+      <ellipse cx="-15" cy="1" rx="11" ry="1.8" transform="rotate(-18, -15, 1)" />
+      <ellipse cx="8" cy="2" rx="12" ry="1.9" transform="rotate(8, 8, 2)" />
+    </g>
+  </g>
+</svg>
