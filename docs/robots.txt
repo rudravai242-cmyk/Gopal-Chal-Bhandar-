@@ -1,4 +1,69 @@
+# ==============================================================================
+# Gopal Chal Bhandar - Production Robots.txt Configuration
+# Domain: https://gopal-chal-bhandar.pntr.dev
+# Best Rice Shop in India | Wholesale & Retail Dealer
+# ==============================================================================
+
+# 1. Standard Search Engine Crawlers (Google, Bing, Yahoo, DuckDuckGo)
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-Mobile
+User-agent: Bingbot
+User-agent: Slurp
+User-agent: DuckDuckBot
+User-agent: Baiduspider
+User-agent: YandexBot
+Allow: /
+Allow: /assets/
+Allow: /og-image.jpg
+Allow: /og-image.png
+Allow: /sitemap.xml
+
+# 2. Social Media & Messaging Link-Preview Bots (MediaFire/Dropbox Style Embeds)
+# WhatsApp preview bot
+User-agent: WhatsApp
+Allow: /
+Allow: /og-image.jpg
+Allow: /og-image.png
+
+# Facebook & Messenger crawler
+User-agent: facebookexternalhit
+User-agent: Facebot
+Allow: /
+Allow: /og-image.jpg
+Allow: /og-image.png
+
+# Twitter / X card generator
+User-agent: Twitterbot
+Allow: /
+Allow: /og-image.jpg
+Allow: /og-image.png
+
+# LinkedIn preview generator
+User-agent: LinkedInBot
+Allow: /
+Allow: /og-image.jpg
+Allow: /og-image.png
+
+# Telegram preview bot
+User-agent: TelegramBot
+Allow: /
+Allow: /og-image.jpg
+Allow: /og-image.png
+
+# Discord, Slack, Applebot, Pinterest
+User-agent: Discordbot
+User-agent: Slackbot
+User-agent: Applebot
+User-agent: Pinterestbot
+Allow: /
+Allow: /og-image.jpg
+Allow: /og-image.png
+
+# 3. Default Rule for all other verified crawlers
 User-agent: *
 Allow: /
 
+# 4. Canonical XML Sitemap
 Sitemap: https://gopal-chal-bhandar.pntr.dev/sitemap.xml
+Host: https://gopal-chal-bhandar.pntr.dev

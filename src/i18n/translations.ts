@@ -26,6 +26,11 @@ export interface Translations {
   navDigitalFard: string;
   navRates: string;
   navStore: string;
+  navApps: string;
+  navAppsDesc: string;
+  showAllApps: string;
+  allAppsTitle: string;
+  allAppsSubtitle: string;
   languageSelectLabel: string;
 
   // Home Hero & Features
@@ -234,6 +239,11 @@ export const TRANSLATIONS: Record<AppLanguage, Translations> = {
     navDigitalFard: 'ডিজিটাল ফর্দ',
     navRates: 'বাজার দর',
     navStore: 'দোকানের রুট',
+    navApps: 'সব অ্যাপস',
+    navAppsDesc: 'সব ডিজিটাল অ্যাপ ও টুলস',
+    showAllApps: 'সব অ্যাপস দেখুন',
+    allAppsTitle: 'গোপাল চাল ভাণ্ডারের সব ডিজিটাল অ্যাপ ও টুলস',
+    allAppsSubtitle: 'দৈনিক দর, বস্তার ক্যালকুলেটর, রান্নার মাপক ও এক-ট্যাপ যোগাযোগ সুবিধা',
     languageSelectLabel: 'ভাষা নির্বাচন করুন',
 
     // Home Hero & Features
@@ -441,6 +451,11 @@ export const TRANSLATIONS: Record<AppLanguage, Translations> = {
     navDigitalFard: 'Digital Fard',
     navRates: 'Market Rates',
     navStore: 'Store Route',
+    navApps: 'All Apps',
+    navAppsDesc: 'All Digital Apps & Store Tools',
+    showAllApps: 'Show All Apps',
+    allAppsTitle: 'All Apps & Smart Digital Tools',
+    allAppsSubtitle: 'Daily mandi rates, bag calculators, master cooking guide & 1-tap store services',
     languageSelectLabel: 'Select Language',
 
     // Home Hero & Features
@@ -648,6 +663,11 @@ export const TRANSLATIONS: Record<AppLanguage, Translations> = {
     navDigitalFard: 'डिजिटल फर्द',
     navRates: 'बाजार भाव',
     navStore: 'दुकान का रास्ता',
+    navApps: 'सभी ऐप्स',
+    navAppsDesc: 'सभी डिजिटल ऐप्स और टूल्स',
+    showAllApps: 'सभी ऐप्स देखें',
+    allAppsTitle: 'गोपाल चावल भंडार के सभी डिजिटल ऐप्स व टूल्स',
+    allAppsSubtitle: 'दैनिक मंडी भाव, बोरी कैलकुलेटर, कुकिंग गाइड और त्वरित डिजिटल सुविधाएं',
     languageSelectLabel: 'भाषा चुनें',
 
     // Home Hero & Features

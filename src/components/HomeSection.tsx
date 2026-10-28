@@ -11,6 +11,9 @@ import {
   ChefHat,
   Navigation,
   ZoomIn,
+  Share2,
+  Check,
+  Copy,
 } from 'lucide-react';
 import { RICE_PRODUCTS, STORE_INFO } from '../data/riceData';
 import { NavTabId, RiceProduct } from '../types';
@@ -32,10 +35,23 @@ export const HomeSection: React.FC<HomeSectionProps> = ({
   onSelectTab,
   onSelectCategory,
   onOpenCookingGuide,
+  onOpenWhatsApp,
 }) => {
   const { t, language, setLanguage, getProductName, getProductTagline, getProductDesc, getProductCategory } =
     useLanguage();
   const [selectedBagProduct, setSelectedBagProduct] = useState<RiceProduct | null>(null);
+  const [hasCopiedPreview, setHasCopiedPreview] = useState(false);
+  const bannerPreviewText =
+    'গোপাল চাল ভান্ডার (শ্রী শ্রী লক্ষ্মী সহায়): এখানে সব ধরনের চাল স্বর্ণ, রত্না, মিনিকেট, জিরাকাঠি, গোবিন্দ ভোগ, আতপ, বাসমীত, চাল ছাড়াও ডাল, তেল, আটা, চিনি, ও বিভিন্ন রকমের মশলা পাইকারি, ও খুচরো সুলভ মূল্যে পাওয়া যায়। প্রোঃ রাম দেবনাথ, মো: 8145625847';
+
+  const handleCopyPreviewText = () => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(bannerPreviewText + '\n\n🌐 https://gopal-chal-bhandar.pntr.dev');
+      setHasCopiedPreview(true);
+      setTimeout(() => setHasCopiedPreview(false), 2500);
+    }
+  };
+
   const bestsellers = RICE_PRODUCTS.filter((p) => p.isBestseller).slice(0, 4);
   const bagProducts = RICE_PRODUCTS.filter((p) => Boolean(p.bagImage));
 
@@ -236,6 +252,74 @@ export const HomeSection: React.FC<HomeSectionProps> = ({
         </a>
       </div>
 
+      {/* 4. Official Authentic Store Banner & Social Link Preview Spotlight */}
+      <section className="bg-gradient-to-br from-amber-950 via-[#380206] to-[#1e0104] text-amber-50 rounded-3xl p-4 sm:p-6 border-2 border-amber-500/40 shadow-2xl space-y-4 overflow-hidden relative">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-amber-500/20 pb-3">
+          <div className="flex items-center gap-2">
+            <span className="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 font-bold text-xs uppercase tracking-wider">
+              🌾 {language === 'en' ? 'Official Shop Banner & Preview' : language === 'hi' ? 'दुकान का आधिकारिक बैनर' : 'অফিসিয়াল দোকান ব্যানার ও প্রিভিউ'}
+            </span>
+            <span className="text-xs text-amber-200/80 font-medium hidden sm:inline">
+              (WhatsApp, Facebook, Twitter প্রিভিউ)
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleCopyPreviewText}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 text-xs font-bold border border-amber-500/30 transition cursor-pointer active:scale-95"
+            >
+              {hasCopiedPreview ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+              <span>{hasCopiedPreview ? (language === 'en' ? 'Copied!' : 'কপি হয়েছে!') : (language === 'en' ? 'Copy Preview Text' : 'টেক্সট কপি')}</span>
+            </button>
+            <a
+              href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                bannerPreviewText + '\n\n🌐 https://gopal-chal-bhandar.pntr.dev'
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-black shadow transition cursor-pointer active:scale-95"
+            >
+              <WhatsAppLogo className="w-3.5 h-3.5" />
+              <span>{language === 'en' ? 'Share Link' : 'লিংক শেয়ার'}</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Banner Graphic Frame */}
+        <div className="rounded-2xl overflow-hidden border border-amber-500/30 bg-black/40 shadow-inner group relative">
+          <img
+            src="/og-image.jpg"
+            alt="গোপাল চাল ভান্ডার - শ্রী শ্রী লক্ষ্মী সহায় - প্রোঃ রাম দেবনাথ"
+            className="w-full h-auto object-cover max-h-72 transition-transform duration-500 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Verbatim Bengali Banner Text */}
+        <div className="space-y-3 bg-black/25 rounded-2xl p-4 border border-amber-500/20">
+          <p className="text-sm sm:text-base text-amber-100 font-semibold leading-relaxed font-['Hind_Siliguri']">
+            {bannerPreviewText}
+          </p>
+
+          <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-amber-500/20 text-xs sm:text-sm text-amber-200/90 font-bold">
+            <span className="flex items-center gap-1.5">
+              <span>👤</span>
+              <span>প্রোঃ রাম দেবনাথ</span>
+            </span>
+            <span className="flex items-center gap-1.5 text-amber-300">
+              <span>🪷</span>
+              <span>শ্রী শ্রী লক্ষ্মী সহায়</span>
+            </span>
+            <a
+              href="tel:8145625847"
+              className="flex items-center gap-1.5 text-amber-400 hover:text-amber-300 underline underline-offset-2"
+            >
+              <span>📞</span>
+              <span>মো: 8145625847</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Quick Category Navigation */}
       <section>

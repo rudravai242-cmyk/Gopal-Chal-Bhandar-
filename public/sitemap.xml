@@ -1,55 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
-  <!-- 1. Home Section: গোপাল চাল ভাণ্ডার - পাইকারি ও খুচরো চাল স্টোর -->
+  <!-- 1. Primary Landing Page (গোপাল চাল ভাণ্ডার - পাইকারি ও খুচরো চাল স্টোর) -->
   <url>
     <loc>https://gopal-chal-bhandar.pntr.dev/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://gopal-chal-bhandar.pntr.dev/og-image.jpg</image:loc>
+      <image:title>Gopal Chal Bhandar - Best Rice Shop in India</image:title>
+      <image:caption>Wholesale and retail premium rice sacks in Kalna RMC Market, West Bengal</image:caption>
+    </image:image>
   </url>
 
-  <!-- 2. Products Section: খাঁটি মিনিকেট, বাসমতী, গোবিন্দভোগ, দুধেশ্বর ও অন্যান্য চাল -->
+  <!-- 2. Rice Catalog & 26kg Sacks Section (মিনিকেট, বাসমতী, গোবিন্দভোগ চাল) -->
   <url>
     <loc>https://gopal-chal-bhandar.pntr.dev/#products</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://gopal-chal-bhandar.pntr.dev/assets/bags/bag-mama-rice.webp</image:loc>
+      <image:title>Kalna Gold Minikit Rice 26kg Sack</image:title>
+      <image:caption>Sun-dried authentic Kalna Minikit rice bag</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://gopal-chal-bhandar.pntr.dev/products</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- 3. Rates Section: আজকের তাজা বর্ধমান ও কালনা মণ্ডি পাইকারি ও খুচরো বাজার দর -->
+  <!-- 3. Live Mandi Daily Rates (আজকের তাজা বর্ধমান ও কালনা মণ্ডি পাইকারি ও খুচরো বাজার দর) -->
   <url>
     <loc>https://gopal-chal-bhandar.pntr.dev/#rates</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://gopal-chal-bhandar.pntr.dev/rates</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- 4. Store Section: কালনা আরএমসি মার্কেট স্টোর, গুগল ম্যাপস লোকেশন ও ডিরেক্ট কল -->
+  <url>
+    <loc>https://gopal-chal-bhandar.pntr.dev/rates</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 4. Kalna Store Route & Google Maps (দোকানের রুট, ম্যাপ ও ফোন নম্বর) -->
   <url>
     <loc>https://gopal-chal-bhandar.pntr.dev/#store</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://gopal-chal-bhandar.pntr.dev/store</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

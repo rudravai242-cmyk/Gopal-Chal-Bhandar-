@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Search, SlidersHorizontal, Star, Store, ChefHat, ZoomIn, Phone } from 'lucide-react';
+import { Search, SlidersHorizontal, Star, Store, ChefHat, ZoomIn, Phone, X, Sparkles } from 'lucide-react';
 import { RICE_PRODUCTS, STORE_INFO } from '../data/riceData';
 import { BagOption, RiceProduct } from '../types';
 import { useLanguage } from '../context/LanguageContext';
@@ -82,20 +82,78 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
     { id: 'special', label: t.catSpecial },
   ];
 
+  // Quick search keywords for 1-tap instant filtering
+  const quickSearchTags = [
+    { id: 'minikit', labelBn: 'মিনিকেট', labelEn: 'Minikit', labelHi: 'मिनीकेट', query: 'মিনিকেট' },
+    { id: 'basmati', labelBn: 'বাসমতী', labelEn: 'Basmati', labelHi: 'बासमती', query: 'বাসমতী' },
+    { id: 'gobindobhog', labelBn: 'গোবিন্দভোগ', labelEn: 'Gobindobhog', labelHi: 'गोविंदभोग', query: 'গোবিন্দভোগ' },
+    { id: 'dudheswar', labelBn: 'দুধেশ্বর', labelEn: 'Dudheswar', labelHi: 'दूधेश्वर', query: 'দুধেশ্বর' },
+    { id: 'boiled', labelBn: 'সেদ্ধ চাল', labelEn: 'Boiled Rice', labelHi: 'उसना चावल', query: 'সেদ্ধ' },
+    { id: 'oil', labelBn: 'সরিষার তেল', labelEn: 'Mustard Oil', labelHi: 'सरसों तेल', query: 'তেল' },
+    { id: 'atta', labelBn: 'শরবতী আটা', labelEn: 'Chakki Atta', labelHi: 'गेहूं आटा', query: 'আটা' },
+  ];
+
+  // Phonetic normalization for Bengali & English search variations
+  const normalize = (str: string) =>
+    str
+      .toLowerCase()
+      .replace(/ket/g, 'kit')
+      .replace(/sh/g, 's')
+      .replace(/bhat/g, 'rice');
+
+  // Filtered products list with high-performance multi-language search
   const filteredProducts = useMemo(() => {
+    const term = searchTerm.trim().toLowerCase();
+    const normalizedTerm = normalize(term);
+
     return RICE_PRODUCTS.filter((product) => {
       const matchesCategory =
         selectedCategory === 'all' || product.category === selectedCategory;
-      const term = searchTerm.trim().toLowerCase();
-      const matchesSearch =
-        term === '' ||
-        product.nameBn.toLowerCase().includes(term) ||
-        product.nameEn.toLowerCase().includes(term) ||
-        product.grainType.toLowerCase().includes(term) ||
-        product.descriptionBn.toLowerCase().includes(term);
+
+      if (!term) return matchesCategory;
+
+      const searchPool = [
+        product.nameBn,
+        product.nameEn,
+        product.nameHi || '',
+        product.taglineBn,
+        product.taglineEn || '',
+        product.taglineHi || '',
+        product.grainType,
+        product.grainTypeEn || '',
+        product.categoryBn,
+        product.category,
+        product.bagBrandName || '',
+        product.origin || '',
+        product.originEn || '',
+      ].map((s) => s.toLowerCase());
+
+      const matchesSearch = searchPool.some((str) => {
+        return str.includes(term) || normalize(str).includes(normalizedTerm);
+      });
 
       return matchesCategory && matchesSearch;
     });
+  }, [selectedCategory, searchTerm]);
+
+  // Check if matches exist across all categories (helps if user is filtered to a specific category)
+  const globalMatchesCount = useMemo(() => {
+    const term = searchTerm.trim().toLowerCase();
+    if (!term || selectedCategory === 'all') return 0;
+    const normalizedTerm = normalize(term);
+
+    return RICE_PRODUCTS.filter((product) => {
+      const searchPool = [
+        product.nameBn,
+        product.nameEn,
+        product.nameHi || '',
+        product.category,
+        product.categoryBn,
+        product.bagBrandName || '',
+      ].map((s) => s.toLowerCase());
+
+      return searchPool.some((str) => str.includes(term) || normalize(str).includes(normalizedTerm));
+    }).length;
   }, [selectedCategory, searchTerm]);
 
   const handleSelectBag = (productId: string, bagIndex: number) => {
@@ -103,6 +161,18 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
       ...prev,
       [productId]: bagIndex,
     }));
+  };
+
+  const handleQuickTagClick = (tagQuery: string) => {
+    if (searchTerm === tagQuery) {
+      setSearchTerm('');
+    } else {
+      setSearchTerm(tagQuery);
+      // Auto-switch to 'all' category so user gets full results for this rice variety
+      if (selectedCategory !== 'all') {
+        onSelectCategory('all');
+      }
+    }
   };
 
   return (
@@ -140,25 +210,102 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
           </div>
         </div>
 
-        {/* Search Bar */}
-        <div className="relative mb-3">
-          <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+        {/* 🔍 Local Search Bar with Real-time Filtering */}
+        <div className="relative mb-2">
+          <Search className="w-4 h-4 text-amber-600 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
+            id="rice-search-input"
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder={t.searchPlaceholder}
-            className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 transition"
+            placeholder={
+              language === 'en'
+                ? 'Search rice by name (e.g. Minikit, Basmati, Gobindobhog, Dudheswar)...'
+                : language === 'hi'
+                ? 'चावल के नाम से खोजें (जैसे: मिनीकेट, बासमती, गोविंदभोग, दूधेश्वर)...'
+                : 'চালের নাম দিয়ে দ্রুত খুঁজুন (যেমন: মিনিকেট, বাসমতী, গোবিন্দভোগ, দুধেশ্বর)...'
+            }
+            className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white shadow-inner transition"
           />
           {searchTerm && (
             <button
               onClick={() => setSearchTerm('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-stone-400 hover:text-stone-700 bg-stone-200 rounded-full w-4 h-4 flex items-center justify-center"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-800 bg-stone-200 hover:bg-stone-300 rounded-full w-5 h-5 flex items-center justify-center transition active:scale-90"
+              title={language === 'en' ? 'Clear search' : 'সার্চ মুছুন'}
+              aria-label="Clear search"
             >
-              ✕
+              <X className="w-3 h-3" />
             </button>
           )}
         </div>
+
+        {/* 🏷️ Quick 1-Tap Filter Chips */}
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none text-xs">
+          <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wider shrink-0 mr-0.5">
+            {language === 'en' ? 'Quick:' : language === 'hi' ? 'जल्दी खोजें:' : 'জনপ্রিয়:'}
+          </span>
+          {quickSearchTags.map((tag) => {
+            const isTagActive = searchTerm.toLowerCase() === tag.query.toLowerCase();
+            const label = language === 'en' ? tag.labelEn : language === 'hi' ? tag.labelHi : tag.labelBn;
+            return (
+              <button
+                key={tag.id}
+                type="button"
+                onClick={() => handleQuickTagClick(tag.query)}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-all border ${
+                  isTagActive
+                    ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                    : 'bg-stone-50 text-stone-600 border-stone-200 hover:bg-amber-50 hover:text-amber-800 hover:border-amber-200'
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* 📊 Live Search Results Counter & Active Filter Badge */}
+        {searchTerm.trim() && (
+          <div className="flex flex-wrap items-center justify-between gap-2 py-1.5 px-2 bg-amber-50/70 border border-amber-200/80 rounded-xl mb-2 text-xs">
+            <div className="flex items-center gap-1.5 text-stone-700">
+              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+              <span>
+                {language === 'en'
+                  ? `Found ${filteredProducts.length} ${filteredProducts.length === 1 ? 'variety' : 'varieties'} for "${searchTerm}"`
+                  : language === 'hi'
+                  ? `"${searchTerm}" के लिए ${filteredProducts.length} प्रकार के चावल मिले`
+                  : `"${searchTerm}" এর জন্য ${filteredProducts.length}টি চালের সম্ভার পাওয়া গেছে`}
+              </span>
+            </div>
+
+            <button
+              onClick={() => setSearchTerm('')}
+              className="text-[11px] font-bold text-amber-800 hover:text-red-700 flex items-center gap-1 cursor-pointer"
+            >
+              <span>{language === 'en' ? 'Clear Filter' : language === 'hi' ? 'फिल्टर हटाएं' : 'ফিল্টার মুছুন'}</span>
+              <X className="w-3 h-3" />
+            </button>
+          </div>
+        )}
+
+        {/* Notification when results exist in other categories */}
+        {filteredProducts.length === 0 && globalMatchesCount > 0 && selectedCategory !== 'all' && (
+          <div className="p-2.5 bg-blue-50 border border-blue-200 rounded-xl mb-2 text-xs text-blue-900 flex items-center justify-between gap-2">
+            <span>
+              {language === 'en'
+                ? `Found ${globalMatchesCount} matches in other categories.`
+                : language === 'hi'
+                ? `अन्य श्रेणियों में ${globalMatchesCount} परिणाम मिले हैं।`
+                : `অন্যান্য ক্যাটাগরিতে ${globalMatchesCount}টি চাল রয়েছে।`}
+            </span>
+            <button
+              onClick={() => onSelectCategory('all')}
+              className="font-bold underline text-blue-800 hover:text-blue-950 shrink-0"
+            >
+              {language === 'en' ? 'View All Categories' : language === 'hi' ? 'सभी श्रेणियां देखें' : 'সব ক্যাটাগরি দেখুন'}
+            </button>
+          </div>
+        )}
 
         {/* Category Filters */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none" role="tablist" aria-label="Rice categories">
@@ -189,31 +336,47 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
           <ProductSkeletonGrid count={4} />
         </div>
       ) : filteredProducts.length === 0 ? (
-        <div id="products-empty-state" className="bg-white rounded-2xl p-10 text-center border border-stone-200 shadow-sm animate-in fade-in duration-200">
+        <div id="products-empty-state" className="bg-white rounded-2xl p-8 sm:p-10 text-center border border-stone-200 shadow-sm animate-in fade-in duration-200">
+          <div className="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto mb-3">
+            <Search className="w-6 h-6" />
+          </div>
           <p className="text-base font-bold text-stone-900">
             {language === 'en'
-              ? 'No rice variety found'
+              ? `No rice variety found for "${searchTerm}"`
               : language === 'hi'
-              ? 'कोई चावल नहीं मिला'
-              : 'কোনো চালের সন্ধান পাওয়া যায়নি'}
+              ? `"${searchTerm}" के लिए कोई चावल नहीं मिला`
+              : `"${searchTerm}" নামে কোনো চাল পাওয়া যায়নি`}
           </p>
-          <p className="text-xs text-stone-500 mt-1">
+          <p className="text-xs text-stone-500 mt-1 max-w-sm mx-auto">
             {language === 'en'
-              ? 'Please try searching with another keyword.'
+              ? 'Try searching with another variety like Minikit, Gobindobhog, Basmati, Dudheswar or click below.'
               : language === 'hi'
-              ? 'कृपया किसी अन्य नाम से खोजें।'
-              : 'অনুগ্রহ করে অন্য কোনো নাম দিয়ে সার্চ করুন।'}
+              ? 'कृपया मिनीकेट, गोविंदभोग, बासमती या दूधेश्वर जैसे किसी अन्य नाम से खोजें।'
+              : 'দয়া করে মিনিকেট, বাসমতী, গোবিন্দভোগ বা দুধেশ্বর ইত্যাদি কোনো নাম দিয়ে সার্চ করুন।'}
           </p>
-          <button
-            id="reset-category-btn"
-            onClick={() => {
-              setSearchTerm('');
-              handleCategoryClick('all');
-            }}
-            className="mt-3 px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition cursor-pointer"
-          >
-            {t.catAll}
-          </button>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+            <button
+              id="reset-search-btn"
+              onClick={() => {
+                setSearchTerm('');
+                handleCategoryClick('all');
+              }}
+              className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition cursor-pointer shadow-sm"
+            >
+              {language === 'en' ? 'Clear Search & Show All' : language === 'hi' ? 'सर्च हटाएं व सभी देखें' : 'সার্চ মুছুন ও সমস্ত চাল দেখুন'}
+            </button>
+            <a
+              href={`https://wa.me/918145625847?text=${encodeURIComponent(
+                `নমস্কার গোপাল চাল ভাণ্ডার, আমি "${searchTerm}" চাল বা বস্তা সম্পর্কে জানতে চাই। দোকানে কি এই চাল পাওয়া যাবে?`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-sm"
+            >
+              <WhatsAppLogo className="w-3.5 h-3.5" />
+              <span>{language === 'en' ? 'Ask on WhatsApp' : language === 'hi' ? 'व्हाट्सएप पर पूछें' : 'হোয়াটসঅ্যাপে খোঁজ নিন'}</span>
+            </a>
+          </div>
         </div>
       ) : (
         <div id="products-grid" className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in fade-in duration-200">
